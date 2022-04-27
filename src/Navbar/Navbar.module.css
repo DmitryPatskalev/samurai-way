@@ -1,0 +1,16 @@
+.nav {
+    grid-area: nav;
+    background-color: rgb(195, 239, 245);
+    text-align: center;
+    padding: 30px;
+}
+
+.item {
+    color: red;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+    
+}
+
