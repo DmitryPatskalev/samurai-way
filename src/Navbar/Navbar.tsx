@@ -3,11 +3,11 @@ import css from './Navbar.module.css'
 
 const Navbar = () => {
 		return <div className={css.nav}>
-				<div className={css.item}><a>Profile</a></div>
-				<div className={css.item}><a>Message</a></div>
-				<div className={css.item}><a>News</a></div>
-				<div className={css.item}><a>Music</a></div>
-				<div className={css.item}><a>Settings</a></div>
+				<div className={css.item}><a href=''>Profile</a></div>
+				<div className={css.item}><a href=''>Message</a></div>
+				<div className={css.item}><a href=''>News</a></div>
+				<div className={css.item}><a href=''>Music</a></div>
+				<div className={css.item}><a href=''>Settings</a></div>
 		</div>
 
 }

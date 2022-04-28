@@ -6,5 +6,9 @@
 
 .stadium {
     width: 1340px;
-    height: 400px;
+    height: 300px;
+}
+
+.description {
+    padding: 10px;
 }
