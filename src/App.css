@@ -10,3 +10,9 @@
     "header header"
     "nav content";
 }
+
+
+.app-wrapper-content {
+    grid-area: content;
+    background-color: rgb(248, 244, 8);
+}
