@@ -19,8 +19,6 @@ const Post: React.FC<PostType> = (props) => {
 						<span>
 								<img src={like} alt='like' className={css.like}/>{props.like}
 							 <img src={dislike} alt='like' className={css.like}/>{props.dislike}
-
-
 						</span>
 			</div>
 	 </div>

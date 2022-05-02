@@ -1,0 +1,29 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.dialogs_item {
+    padding: 10px;
+}
+
+.dialog div {
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Neucha', cursive;
+}
+
+.dialog a:hover {
+    color: blue;
+}
+
+.dialog a {
+    color: black;
+    text-decoration: none;
+}
+
+.message div {
+    padding: 10px;
+    font-family: 'Neucha', cursive;
+}
