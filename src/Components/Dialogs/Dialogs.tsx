@@ -19,7 +19,6 @@ const Dialogs = () => {
 						<div>Hello dude!!!</div>
 						<div>How are you today?</div>
 						<div>Fine, thanks man!</div>
-
 				 </div>
 			</div>
 	 </div>
