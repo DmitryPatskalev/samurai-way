@@ -5,8 +5,9 @@ import like from '../../../Photo/Like.jpg'
 import dislike from '../../../Photo/Dislike.jpg'
 
 
-type PostType = {
-	 message: any
+export type PostType = {
+	 id?: string
+	 message: string
 	 like: number
 	 dislike: number
 }
