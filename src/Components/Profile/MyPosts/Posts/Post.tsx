@@ -3,16 +3,10 @@ import avatar from '../../../Photo/kitty.jpg'
 import React from "react";
 import like from '../../../Photo/Like.jpg'
 import dislike from '../../../Photo/Dislike.jpg'
+import {PostsType} from "../../../../index";
 
 
-export type PostType = {
-	 id: string
-	 message: string
-	 like: number
-	 dislike: number
-}
-
-const Post: React.FC<PostType> = (props) => {
+const Post = (props: PostsType) => {
 	 return <div className={css.item}>
 			<img className={css.avatar} src={avatar} alt='avatar'/>
 			{props.message}

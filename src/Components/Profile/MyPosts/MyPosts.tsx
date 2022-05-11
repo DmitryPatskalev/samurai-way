@@ -1,13 +1,14 @@
 import React from "react";
 import css from './MyPosts.module.css'
-import Post, {PostType} from "./Posts/Post";
+import Post from "./Posts/Post";
 import {v1} from 'uuid'
+import {PostsType} from "../../../index";
 
-type PostsElementType = {
-	 posts: PostType[]
+type MyPostsType = {
+	 posts: PostsType[]
 }
 
-const MyPosts: React.FC<PostsElementType> = (props) => {
+const MyPosts = (props: MyPostsType) => {
 
 	 let postsElement = props.posts.map((elem, index) => {
 			return <div key={index}>
