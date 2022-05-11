@@ -6,7 +6,7 @@ import dislike from '../../../Photo/Dislike.jpg'
 
 
 export type PostType = {
-	 id?: string
+	 id: string
 	 message: string
 	 like: number
 	 dislike: number
