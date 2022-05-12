@@ -2,10 +2,11 @@ import React from "react";
 import css from './MyPosts.module.css'
 import Post from "./Posts/Post";
 import {v1} from 'uuid'
-import {PostsType} from "../../../index";
+import {PostType} from "../../../Redux/state";
+
 
 type MyPostsType = {
-	 posts: PostsType[]
+	 posts: PostType[]
 }
 
 const MyPosts = (props: MyPostsType) => {

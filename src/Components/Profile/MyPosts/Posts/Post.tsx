@@ -3,10 +3,10 @@ import avatar from '../../../Photo/kitty.jpg'
 import React from "react";
 import like from '../../../Photo/Like.jpg'
 import dislike from '../../../Photo/Dislike.jpg'
-import {PostsType} from "../../../../index";
+import {PostType} from "../../../../Redux/state";
 
 
-const Post = (props: PostsType) => {
+const Post = (props: PostType) => {
 	 return <div className={css.item}>
 			<img className={css.avatar} src={avatar} alt='avatar'/>
 			{props.message}
