@@ -18,7 +18,11 @@ const Dialogs = (props: DialogsType) => {
 			</span>
 	 })
 	 let messagesElement = props.messages.map((elem, index) => {
-			return <Message id={elem.id} message={elem.message}/>
+			return <div>
+				 <Message id={elem.id} message={elem.message}/>
+			</div>
+
+
 	 })
 
 	 return <div className={css.dialogs}>
@@ -30,8 +34,13 @@ const Dialogs = (props: DialogsType) => {
 			<div className={css.messages}>
 				 <div className={css.message}>
 						{messagesElement}
+						<div>
+							 <textarea></textarea>
+							 <button>Send</button>
+						</div>
 				 </div>
 			</div>
+
 	 </div>
 }
 export default Dialogs

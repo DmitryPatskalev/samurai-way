@@ -7,9 +7,9 @@ import Dialogs from "./Components/Dialogs/Dialogs";
 import {Route} from "react-router-dom";
 import {StateType} from "./Redux/state";
 
-
 type AppType = {
 	 state: StateType
+	 addPost: (message: string) => void
 }
 
 function App(props: AppType) {
@@ -23,7 +23,7 @@ function App(props: AppType) {
 									render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs}
 																				 messages={props.state.dialogsPage.messages}/>}/>
 					 <Route path='/profile'
-									render={() => <Profile posts={props.state.profilePage.posts}/>}/>
+									render={() => <Profile posts={props.state.profilePage.posts} addPost={props.addPost}/>}/>
 				</div>
 		 </div>
 	 );
