@@ -1,4 +1,5 @@
 import {v1} from "uuid";
+import {rerenderIntireTree} from "../render";
 
 export type StateType = {
 	 profilePage: ProfilePageType
@@ -63,6 +64,7 @@ export let addPost = (postMessage: string) => {
 			dislike: 1
 	 }
 	 state.profilePage.posts.push(newPost)
+	 rerenderIntireTree(state)
 }
 
 export default state
