@@ -1,4 +1,4 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 import css from './MyPosts.module.css'
 import Post from "./Posts/Post";
 import {v1} from 'uuid'
@@ -18,24 +18,23 @@ const MyPosts = (props: MyPostsType) => {
 			</div>
 	 })
 	 let newPostElement = React.createRef<HTMLTextAreaElement>()
-	 const addMessage = () => {
+
+	 const addNewPost = () => {
 			if (newPostElement.current) {
 				 props.addPost(newPostElement.current.value)
 				 newPostElement.current.value = ''
 			}
 	 }
-	 const onPostChange = () => {
-			if (newPostElement.current) {
-				 props.updateNewPostText('')
-			}
+	 const newTextChangeHundler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+			props.updateNewPostText(event.currentTarget.value)
 	 }
 
 	 return <div className={css.textarea}>
 			<h3>My Posts</h3>
 			<div>
-				 <textarea ref={newPostElement} onChange={onPostChange}></textarea>
+				 <textarea ref={newPostElement} onChange={newTextChangeHundler}></textarea>
 				 <div>
-						<button onClick={addMessage}>Add post</button>
+						<button onClick={addNewPost}>Add post</button>
 				 </div>
 			</div>
 			<div className={css.posts}>
