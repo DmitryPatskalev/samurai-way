@@ -1,14 +1,16 @@
 import {v1} from "uuid";
 import {rerenderIntireTree} from "../render";
+import post from "../Components/Profile/MyPosts/Posts/Post";
+
 
 export type StateType = {
 	 profilePage: ProfilePageType
 	 dialogsPage: DialogsPageType
-
 }
 
 export type ProfilePageType = {
-	 posts: PostType[]
+	 posts: PostsType[]
+	 newPostText: string
 }
 
 export type DialogsPageType = {
@@ -16,7 +18,7 @@ export type DialogsPageType = {
 	 messages: MessagesType[]
 }
 
-export type PostType = {
+export type PostsType = {
 	 id: string
 	 message: string
 	 like: number
@@ -39,7 +41,9 @@ let state: StateType = {
 				 {id: v1(), message: 'You are real dude!!!', like: 5, dislike: 2},
 				 {id: v1(), message: 'Awesome', like: 10, dislike: 1},
 			],
+			newPostText: ''
 	 },
+
 	 dialogsPage: {
 			dialogs: [
 				 {id: v1(), name: 'Dima'},
@@ -53,9 +57,12 @@ let state: StateType = {
 				 {id: v1(), message: 'Hello dude!!!'},
 				 {id: v1(), message: 'How are you today?'},
 				 {id: v1(), message: 'Fine, thanks man!'},
-			]
+			],
+
 	 }
 }
+
+
 export let addPost = (postMessage: string) => {
 	 let newPost = {
 			id: v1(),
@@ -64,6 +71,11 @@ export let addPost = (postMessage: string) => {
 			dislike: 1
 	 }
 	 state.profilePage.posts.push(newPost)
+	 rerenderIntireTree(state)
+}
+
+export const updateNewPostText = (newText: string) => {
+	 state.profilePage.newPostText = newText
 	 rerenderIntireTree(state)
 }
 

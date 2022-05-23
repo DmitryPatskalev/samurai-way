@@ -1,18 +1,24 @@
 import React from "react";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import {PostType} from "../../Redux/state";
+import {PostsType} from "../../Redux/state";
 
 type ProfileType = {
-	 posts: PostType[]
-	 addPost: (message: string) => void
+	 posts: PostsType[]
+	 addPost: (postMessage: string) => void
+	 updateNewPostText: (newText: string) => void
 
 }
 
 const Profile = (props: ProfileType) => {
 	 return <div>
 			<ProfileInfo/>
-			<MyPosts posts={props.posts} addPost={props.addPost}/>
+			<MyPosts
+				posts={props.posts}
+				addPost={props.addPost}
+				updateNewPostText={props.updateNewPostText}
+
+			/>
 	 </div>
 
 }
