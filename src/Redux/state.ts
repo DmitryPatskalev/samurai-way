@@ -1,7 +1,12 @@
 import {v1} from "uuid";
-import {rerenderIntireTree} from "../render";
-import post from "../Components/Profile/MyPosts/Posts/Post";
 
+
+let rerenderEntireTree: (state: StateType) => void = () => {
+}
+
+export const subscribe = (callback: (state: StateType) => void) => {
+	 rerenderEntireTree = callback
+}
 
 export type StateType = {
 	 profilePage: ProfilePageType
@@ -63,20 +68,20 @@ let state: StateType = {
 }
 
 
-export let addPost = (postMessage: string) => {
+export let addPost = () => {
 	 let newPost = {
 			id: v1(),
-			message: postMessage,
+			message: state.profilePage.newPostText,
 			like: 5,
 			dislike: 1
 	 }
 	 state.profilePage.posts.push(newPost)
-	 rerenderIntireTree(state)
+	 rerenderEntireTree(state)
 }
 
 export const updateNewPostText = (newText: string) => {
 	 state.profilePage.newPostText = newText
-	 rerenderIntireTree(state)
+	 rerenderEntireTree(state)
 }
 
 export default state
